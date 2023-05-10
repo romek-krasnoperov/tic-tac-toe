@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap');
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary-grey: #f4f4f4;
+    --primarily-dark: #333;
+    --cell-size: 100px;
+}
+
+body {
+    background-color: var(--primary-grey);
+}
+
+main.container {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    gap: 30px;
+    font-family: 'Chelsea Market', cursive;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 50px;
+    font-size: 40px;
+}
+
+.cell-container {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(3, auto);
+    cursor: pointer;
+}
+
+.cell {
+    width: var(--cell-size);
+    height: var(--cell-size);
+    border: 1px solid var(--primarily-dark);
+    font-size: 50px;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
+.cell:nth-child(1),
+.cell:nth-child(2),
+.cell:nth-child(3) {
+    border-top: none;
+}
+
+.cell:nth-child(1),
+.cell:nth-child(4),
+.cell:nth-child(7){
+    border-left: none;
+}
+
+.cell:nth-child(3),
+.cell:nth-child(6),
+.cell:nth-child(9){
+    border-right: none;
+}
+
+.cell:nth-child(7),
+.cell:nth-child(8),
+.cell:nth-child(9){
+    border-bottom: none;
+}
+
+button{
+    font-family: 'Chelsea Market', cursive;
+    padding: 5px 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 500px) {
+    :root {
+        --cell-size: 70px;
+    }
+    h1 {
+        margin-bottom: 30px;
+        font-size: 35px;
+    }
+}
